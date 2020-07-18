@@ -1,0 +1,35 @@
+sources:
+  GPS_HPGRS_Lotek:
+    description: HPGRS Lotek Cattle Collar Data
+    driver: csv
+    args:
+      urlpath: "/mnt/c/Users/rowan.gaffney/Projects/CPER_Data_Ecosystem/example_data/Lotek_BRTE_Fix/PinPoint 102072 2019-07-17*.csv"
+      csv_kwargs:
+        skiprows:
+        - 0
+        - 1
+        - 2
+        - 3
+        na_values: 0
+    metadata:
+      x: Longitude
+      y: Latitude
+      instrument_type: Lotek
+  GPS_CPER_SmithTech:
+    description: CPER SmithTech Cattle Collar Data
+    driver: csv
+    args:
+      urlpath: ["/mnt/c/Users/rowan.gaffney/Projects/CPER_Data_Ecosystem/example_data/CARM_467/*.CSV","/mnt/c/Users/rowan.gaffney/Projects/CPER_Data_Ecosystem/example_data/CARM_481/*.CSV"]
+    metadata:
+      x: LONGITUDE E/W
+      y: LATITUDE N/S
+      instrument_type: Smith_Tech
+  GPS_CPER_SmithTech_LongevityTesting:
+    description: GPS (SmithTech) Cattle Collar Data at CPER. This is the data from the longevity testing during 2019.
+    driver: csv
+    args:
+      urlpath: ["/mnt/c/Users/rowan.gaffney/Projects/CPER_Data_Ecosystem/example_data/2019-08/*.CSV","/mnt/c/Users/rowan.gaffney/Projects/CPER_Data_Ecosystem/example_data/2019-09/*.CSV"]
+    metadata:
+      x: LONGITUDE E/W
+      y: LATITUDE N/S
+      instrument_type: Smith_Tech
